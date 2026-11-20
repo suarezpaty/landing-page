@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Inicia sesión en tu cuenta de Automotive."
+    />
+    <meta name="theme-color" content="#080808" />
+    <title>Iniciar sesión | Automotive</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/login.css" />
+  </head>
+  <body>
+    <main class="login-page">
+      <video class="login-page__video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="../assets/videos/herovideo.mp4" type="video/mp4" />
+      </video>
+      <div class="login-page__overlay" aria-hidden="true"></div>
+
+      <a class="login-back" href="./index.html">
+        <span aria-hidden="true">&larr;</span>
+        Volver al inicio
+      </a>
+
+      <section class="login-showcase" aria-label="Automotive">
+        <a class="login-brand" href="./index.html">
+          <img src="../assets/images/logo/favicon.svg" alt="" aria-hidden="true" />
+          <span>AUTOMOTIVE</span>
+        </a>
+        <div class="login-showcase__copy">
+          <p class="login-eyebrow">EL CAMINO ES TUYO</p>
+          <h1>Tu próxima historia comienza aquí.</h1>
+          <p>Accede a tu espacio y descubre una colección hecha para quienes viven la pasión por conducir.</p>
+        </div>
+        <p class="login-showcase__caption">NUEVOS · USADOS · DEPORTIVOS</p>
+      </section>
+
+      <section class="login-panel" aria-labelledby="login-title">
+        <div class="login-card">
+          <a class="login-brand login-brand--mobile" href="./index.html">
+            <img src="../assets/images/logo/favicon.svg" alt="" aria-hidden="true" />
+            <span>AUTOMOTIVE</span>
+          </a>
+          <p class="login-eyebrow">BIENVENIDO DE NUEVO</p>
+          <h2 id="login-title">Inicia sesión</h2>
+          <p class="login-card__intro">Ingresa tus datos para continuar.</p>
+
+          <form class="login-form" action="#" method="post">
+            <label class="login-form__label" for="email">Correo electrónico</label>
+            <input
+              class="login-form__input"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="tu@correo.com"
+              autocomplete="email"
+              required
+            />
+
+            <div class="login-form__password-heading">
+              <label class="login-form__label" for="password">Contraseña</label>
+              <a class="login-form__link" href="#recuperar">¿Olvidaste tu contraseña?</a>
+            </div>
+            <input
+              class="login-form__input"
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              autocomplete="current-password"
+              required
+            />
+
+            <label class="login-form__remember">
+              <input type="checkbox" name="remember" />
+              <span>Recordarme</span>
+            </label>
+
+            <button class="login-form__submit" type="submit">Iniciar sesión</button>
+            <p class="login-form__notice">
+              Acceso de demostración: al continuar se abrirá el panel de inventario.
+            </p>
+          </form>
+
+          <p class="login-card__signup">
+            ¿Aún no tienes cuenta? <a class="login-form__link" href="#registro">Crear cuenta</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <script src="../assets/js/login.js" defer></script>
+  </body>
+</html>

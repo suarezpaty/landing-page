@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Automotive: autos deportivos de alta gama, nuevos y usados."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>Automotive</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/logo/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/hero.css" />
+    <link rel="stylesheet" href="../assets/css/suscripcion.css" />
+    <link rel="stylesheet" href="../assets/css/catalogo.css" />
+    <link rel="stylesheet" href="../assets/css/repuestos.css" />
+    <link rel="stylesheet" href="../assets/css/testimonios.css" />
+    <link rel="stylesheet" href="../assets/css/sedes.css" />
+    <link rel="stylesheet" href="../assets/css/footer.css" />
+    <link rel="stylesheet" href="../assets/css/back-to-top.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Automotive, inicio">
+        <img src="../assets/images/logo/favicon.svg" alt="" aria-hidden="true" />
+        <span>AUTOMOTIVE</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="main-navigation" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#repuestos">Repuestos</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#sedes">Sedes</a>
+        <a href="./login.html">Login</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <video class="hero__video" autoplay muted loop playsinline>
+          <source src="../assets/videos/herovideo.mp4" type="video/mp4" />
+        </video>
+        <div class="hero__overlay" aria-hidden="true"></div>
+        <div class="hero__content">
+          <h2 class="hero__eyebrow">NUEVOS · USADOS · DEPORTIVOS</h2>
+          <h2 id="hero-title">El motivo eres tú</h2>
+          <h3>
+            Hay autos que te llevan a un lugar y otros que te recuerdan por qué
+            comenzaste el viaje
+          </h3>
+          <a class="hero__button" href="#catalogo">Explorar Catálogo</a>
+        </div>
+      </section>
+
+      <section class="subscription" aria-labelledby="subscription-title">
+        <div class="subscription__content">
+          <p class="subscription__eyebrow">SIEMPRE AL DÍA</p>
+          <h2 id="subscription-title">El próximo gran auto, primero en tu correo.</h2>
+          <p class="subscription__description">
+            Suscríbete y recibe actualizaciones cada vez que incorporemos un nuevo vehículo a
+            nuestra colección.
+          </p>
+          <form class="subscription__form" id="subscription-form">
+            <label class="subscription__label" for="subscription-email">
+              Correo electrónico
+            </label>
+            <div class="subscription__controls">
+              <input
+                id="subscription-email"
+                name="email"
+                type="email"
+                placeholder="tu@correo.com"
+                autocomplete="email"
+                required
+              />
+              <button type="submit">Suscribirme</button>
+            </div>
+            <p class="subscription__notice">
+              Formulario de demostración: la suscripción aún no se registra.
+            </p>
+            <p class="subscription__status" id="subscription-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="catalog" id="catalogo" aria-labelledby="catalog-title">
+        <div class="catalog__inner">
+          <div class="catalog__heading">
+            <h2 class="catalog__eyebrow">LA COLECCIÓN</h2>
+            <h3 class="catalog__title" id="catalog-title">Una Época · Tu elección</h3>
+            <h3 class="catalog__description">
+              Ícono de distintas generaciones. Selecciona una categoría para descubrir sus modelos
+            </h3>
+          </div>
+
+          <div class="catalog__categories" role="group" aria-label="Categorías de vehículos">
+            <button class="catalog__category" type="button" data-category="clasicos" aria-pressed="false">
+              Clásicos <span>· Antes del 2000</span>
+            </button>
+            <button class="catalog__category" type="button" data-category="contemporaneos" aria-pressed="false">
+              Contemporáneos <span>· 2002 - 2018</span>
+            </button>
+            <button class="catalog__category" type="button" data-category="modernos" aria-pressed="false">
+              Modernos <span>· 2019 - Presente</span>
+            </button>
+          </div>
+
+          <div class="catalog__content">
+            <div class="catalog__models" id="catalog-models" aria-live="polite">
+              <p class="catalog__prompt">Selecciona una categoría para ver sus vehículos.</p>
+            </div>
+            <label class="catalog__mobile-models">
+              <span>Selecciona un modelo</span>
+              <select id="catalog-mobile-models" disabled>
+                <option value="">Selecciona una categoría primero</option>
+              </select>
+            </label>
+            <div class="catalog__detail" id="catalog-detail" aria-live="polite">
+              <p class="catalog__prompt">Elige un modelo para descubrir todos sus detalles.</p>
+            </div>
+          </div>
+
+          <section class="catalog-request" aria-labelledby="catalog-request-title">
+            <div class="catalog-request__heading">
+              <h3 id="catalog-request-title">¿No encuentra el vehículo que desea?</h3>
+              <p>
+                Por favor, indíquenos cuál busca y comparta sus datos para que uno de nuestros
+                asesores se comunique con usted.
+              </p>
+            </div>
+
+            <form class="catalog-request__form" id="catalog-request-form">
+              <div class="catalog-request__vehicle-fields">
+                <label class="catalog-request__field">
+                  <span>Marca</span>
+                  <select name="make" id="request-make" required>
+                    <option value="">Selecciona una marca</option>
+                  </select>
+                </label>
+                <label class="catalog-request__field">
+                  <span>Modelo</span>
+                  <select name="model" id="request-model" required disabled>
+                    <option value="">Selecciona primero una marca</option>
+                  </select>
+                </label>
+                <label class="catalog-request__field">
+                  <span>Año</span>
+                  <select name="year" id="request-year" required disabled>
+                    <option value="">Selecciona primero un modelo</option>
+                  </select>
+                </label>
+                <label class="catalog-request__field">
+                  <span>Condición</span>
+                  <select name="condition" required>
+                    <option value="">Selecciona una condición</option>
+                    <option value="Nuevo"><Nuevo></option>
+                    <option value="Usado">Usado</option>
+                    <option value="Cualquiera">Cualquiera</option>
+                  </select>
+                </label>
+              </div>
+
+              <label class="catalog-request__field catalog-request__field--wide">
+                <span>¿No aparece el vehículo? Cuéntanos cuál buscas</span>
+                <input
+                  type="text"
+                  name="requested-vehicle"
+                  placeholder="Marca, modelo, año u otros detalles"
+                />
+              </label>
+
+              <div class="catalog-request__contact-fields">
+                <label class="catalog-request__field">
+                  <span>Nombre</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+                <label class="catalog-request__field">
+                  <span>Correo electrónico</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+                <label class="catalog-request__field">
+                  <span>Teléfono</span>
+                  <input type="tel" name="phone" autocomplete="tel" required />
+                </label>
+              </div>
+
+              <p class="catalog-request__notice">
+                Formulario de demostración: todavía no envía tus datos a un asesor.
+              </p>
+              <button class="catalog-request__submit" type="submit">Solicitar contacto</button>
+              <p class="catalog-request__status" id="catalog-request-status" role="status"></p>
+            </form>
+          </section>
+        </div>
+      </section>
+
+      <section class="parts" id="repuestos" aria-labelledby="parts-title">
+        <div class="parts__inner">
+          <div class="parts__heading">
+            <p class="parts__eyebrow">RENDIMIENTO Y CONFIANZA</p>
+            <h2 id="parts-title">Repuestos y Autopartes</h2>
+          </div>
+
+          <div class="parts__grid">
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestosuno.jpg" alt="Repuestos de motor" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Motor</h3>
+            </article>
+
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestosdoss.jpg" alt="Caja de transmisión" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Caja</h3>
+            </article>
+
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestostres.jpg" alt="Componentes de tren delantero" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Tren Delantero</h3>
+            </article>
+
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestoscuatro.jpg" alt="Lubricantes para vehículos" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Lubricantes</h3>
+            </article>
+
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestoscinco.jpg" alt="Sistema de luces" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Luces</h3>
+            </article>
+
+            <article class="parts-card">
+              <img src="../assets/images/repuestos/repuestosseis.jpg" alt="Filtros para vehículos" />
+              <div class="parts-card__overlay" aria-hidden="true"></div>
+              <h3>Filtros</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials" id="testimonios" aria-labelledby="testimonials-title">
+        <div class="testimonials__inner">
+          <div class="testimonials__heading">
+            <p class="testimonials__eyebrow">VOCES REALES</p>
+            <h2 id="testimonials-title">Experiencias que trascienden</h2>
+          </div>
+
+          <div class="testimonials__grid">
+            <article class="testimonial-card">
+              <img class="testimonial-card__photo--top" src="../assets/images/testimonios/julian.jpg" alt="Julián A." />
+              <div class="testimonial-card__content">
+                <h3>Julián A.</h3>
+                <blockquote>
+                  “Como amante de la velocidad y el diseño, buscaba una pieza muy específica para mi colección. El equipo no solo entendió perfectamente lo que quería, sino que consiguieron una configuración exclusiva que superó mis expectativas. El rendimiento del coche es simplemente brutal.”
+                </blockquote>
+                <p class="testimonial-card__car">Ferrari 250 GTO</p>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img src="../assets/images/testimonios/valeria.jpg" alt="Valeria S." />
+              <div class="testimonial-card__content">
+                <h3>Valeria S.</h3>
+                <blockquote>
+                  “La experiencia de compra está a la altura de las marcas que representan. Desde la primera cita privada hasta el momento de destapar el auto en la entrega, el trato fue impecable, discreto y totalmente personalizado. No es solo comprar un deportivo, es vivir la experiencia de lujo definitiva.”
+                </blockquote>
+                <p class="testimonial-card__car">Porsche 911 GT3 RS</p>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img class="testimonial-card__photo--top" src="../assets/images/testimonios/mauricio.jpg" alt="Mauricio D." />
+              <div class="testimonial-card__content">
+                <h3>Mauricio D.</h3>
+                <blockquote>
+                  “El respaldo de su taller especializado me da la tranquilidad que un vehículo de este calibre exige.”
+                </blockquote>
+                <p class="testimonial-card__car">Lexus LFA</p>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <img src="../assets/images/testimonios/alejandra.jpg" alt="Alejandra T." />
+              <div class="testimonial-card__content">
+                <h3>Alejandra T.</h3>
+                <blockquote>
+                  “Impecables de principio a fin. Me ayudaron a gestionar la adquisición de una edición limitada que parecía imposible de conseguir. Todo el proceso de importación y documentación fue transparente y libre de estrés. Volveré sin duda para mi próximo hiperauto.”
+                </blockquote>
+                <p class="testimonial-card__car">Ferrari LaFerrari</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="locations" id="sedes" aria-labelledby="locations-title">
+        <div class="locations__inner">
+          <div class="locations__heading">
+            <p class="locations__eyebrow">NUESTROS ESPACIOS</p>
+            <h2 id="locations-title">Encuéntranos</h2>
+          </div>
+
+          <div class="locations__grid">
+            <article class="location-card">
+              <div class="location-card__map-wrap">
+                <iframe
+                  class="location-card__map"
+                  title="Mapa de Barquisimeto"
+                  src="https://maps.google.com/maps?q=10.071794563049783,-69.29324207484987&amp;z=15&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="location-card__details">
+                <p>Barquisimeto</p>
+                <a href="tel:+5804123133131">(0412)-313-3131</a>
+              </div>
+            </article>
+
+            <article class="location-card">
+              <div class="location-card__map-wrap">
+                <iframe
+                  class="location-card__map"
+                  title="Mapa de Margarita"
+                  src="https://maps.google.com/maps?q=10.996295293627622,-63.81232204600665&amp;z=15&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="location-card__details">
+                <p>Margarita</p>
+                <a href="tel:+5804141231231">(0414)-123-1231</a>
+              </div>
+            </article>
+
+            <article class="location-card">
+              <div class="location-card__map-wrap">
+                <iframe
+                  class="location-card__map"
+                  title="Mapa de La Candelaria"
+                  src="https://maps.google.com/maps?q=10.505277855855734,-66.90147107907323&amp;z=15&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="location-card__details">
+                <p>Caracas</p>
+                <a href="tel:+5802122131313">(0212)-213-1313</a>
+              </div>
+            </article>
+
+            <article class="location-card">
+              <div class="location-card__map-wrap">
+                <iframe
+                  class="location-card__map"
+                  title="Mapa de Chacao"
+                  src="https://maps.google.com/maps?q=10.49019164416194,-66.85438524392343&amp;z=15&amp;output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div class="location-card__details">
+                <p>Caracas</p>
+                <a href="tel:+5802121231231">(0212)-123-1231</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <a class="site-footer__brand" href="#inicio" aria-label="Automotive, inicio">
+          <img src="../assets/images/logo/favicon.svg" alt="" aria-hidden="true" />
+          <span>AUTOMOTIVE</span>
+        </a>
+        <div class="site-footer__legal">
+          <p>RIF: J-501800000</p>
+          <p>&copy; 2026 Automotive. Todos los derechos reservados.</p>
+        </div>
+        <nav class="site-footer__social" aria-label="Redes sociales">
+          <a href="https://wa.me/5804223390531" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 3.5A11.8 11.8 0 0 0 12 0a12 12 0 0 0-10.4 17.9L0 24l6.2-1.6A12 12 0 0 0 12 24h0A12 12 0 0 0 20.5 3.5Zm-8.5 18a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 .9-3.6-.2-.4A10 10 0 1 1 12 21.5Zm5.5-7.5c-.3-.1-1.8-.9-2.1-1-.3-.1-.5-.1-.7.1l-1 1.1c-.2.2-.4.2-.7.1-1.8-.9-3-1.6-4.2-3.7-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.5 3.8 6 5.3 2.2.9 3.1 1 4.2.8.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" class="site-footer__social-dot" />
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.6.4-1 1-1Z" />
+            </svg>
+          </a>
+        </nav>
+      </div>
+    </footer>
+
+    <a class="back-to-top" href="#inicio" aria-label="Volver al inicio">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19V5m0 0-6 6m6-6 6 6" />
+      </svg>
+    </a>
+
+    <script src="../assets/js/catalogo.js" defer></script>
+    <script src="../assets/js/suscripcion.js" defer></script>
+    <script src="../assets/js/back-to-top.js" defer></script>
+    <script src="../assets/js/navigation.js" defer></script>
+  </body>
+</html>
