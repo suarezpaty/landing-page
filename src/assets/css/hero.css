@@ -46,18 +46,14 @@ a {
   display: inline-flex;
   flex: 0 0 auto;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-roboto);
-  font-size: clamp(1.1rem, 2vw, 1.45rem);
-  font-weight: 900;
-  letter-spacing: 0.13em;
 }
 
 .brand img {
   display: block;
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
+  width: 240px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav-toggle {
@@ -205,6 +201,11 @@ a {
   .nav-toggle {
     display: block;
     margin-left: auto;
+  }
+
+  .brand img {
+    width: min(220px, calc(100vw - 110px));
+    height: 58px;
   }
 
   .nav-toggle[aria-expanded="true"] span:nth-child(1) {

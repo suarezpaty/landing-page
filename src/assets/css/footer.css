@@ -17,16 +17,14 @@
 .site-footer__brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-roboto);
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: 0.13em;
 }
 
 .site-footer__brand img {
-  width: 32px;
-  height: 32px;
+  display: block;
+  width: 240px;
+  height: 64px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .site-footer__legal {
@@ -88,6 +86,11 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 22px;
+  }
+
+  .site-footer__brand img {
+    width: min(220px, calc(100vw - 110px));
+    height: 58px;
   }
 
   .site-footer__legal {
